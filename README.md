@@ -5,3 +5,4 @@ This repository contains all material related to the course. For additional deta
 ## Iterations
 
 * **Winter Quarter 2017**, Graduate Program at the University of Bonn
+
