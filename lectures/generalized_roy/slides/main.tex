@@ -1,0 +1,129 @@
+\input{header}
+
+%!TEX root = ../main.tex
+\title{Estimating Marginal Returns to Education}
+\author{Pedro Carneiro, James J. Heckman, and Edward J. Vytlacil}
+
+\date{}
+
+\let\otp\titlepage
+%\renewcommand{\titlepage}{\otp\addtocounter{framenumber}{-1}}
+
+\begin{document}
+\maketitle
+
+\begin{frame}
+\textbf{Questions}
+
+\begin{itemize}
+\item Does the pursuit of compareative advantage increase or decrease earnings in equality within sectors and in the overall economy?
+\item Do the people with the highest $i$ skill actually work in sector $i$?
+\item As people enter a sector in response to an increase in the demand for its services, does the average skill level employed there rise or fall?
+\end{itemize}
+
+\end{frame}
+
+ \begin{frame}
+ The proportion of the population working in sector one $P_1$
+ \begin{align*}
+ P_1 = \int^\infty_0 \int^{\pi_1 s_1 / \pi_2}_0 f(s_1, s_s) ds_1ds_2
+ \end{align*}
+
+ The density of skills employed in sector one differs from the population density of skills.
+
+ \begin{align*}
+ f(s_1) & = \int^\infty_0 f(s_1, s_2) ds_2 \\
+ g_1(s_1 \mid \pi_1 S_1 > \pi_2 S_2) & = \frac{1}{P} \int^{\pi_1 s_1 /\pi_2}_0 f(s_1, s_2) ds_2
+ \end{align*}
+
+
+ The distribution of skills employed in sector $i$ differs from the population distribution of skills due to comparative advantage.
+ \end{frame}
+
+
+\begin{frame}
+
+\textbf{Wage Equations}
+
+\begin{align*}
+\log W_1 & = \log \pi_1 + \mu_1 + U_1 \\
+\log W_2 & = \log \pi_2 + \mu_2 + U_2, \\
+\end{align*}
+where $U_i = \log S_i - \mu_i$.
+
+\end{frame}
+
+
+\begin{frame}
+\textbf{The Generalized Roy Model}
+
+\begin{align}
+\text{Potential Outcomes} &\qquad \text{Cost} \\
+Y_1 = \mu_1(X) + U_1      &\qquad C = \mu_D(Z) + U_C \\
+Y_0 = \mu_0(X) + U_0      &\qquad \\
+    & \\
+\text{Observed Outcomes } &\qquad \text{Choice} \\
+Y = D Y_1 + (1 - D)Y_0 &\qquad S = Y_1 - Y_0 - C \\
+                       &\qquad D = \mathrm{I}[S < 0] \\
+\end{align}
+\end{frame}
+
+
+\begin{frame}
+\textbf{Mapping Notation to original Roy Model}
+
+\begin{align}
+\text{Potential Outcomes} &\qquad \text{Cost} \\
+W_1 = \pi S_1      &\qquad C = 0 \\
+W_2 = \pi s_1       &\qquad \\
+    & \\
+\text{Observed Outcomes } &\qquad \text{Choice} \\
+W = D W_1 + (1 - D)W_2 &\qquad S = W_1 - W_2 \\
+                       &\qquad D = \mathrm{I}[S < 0] \\
+\end{align}
+\end{frame}
+
+
+\begin{frame}
+\textbf{Extended Roy Model}
+
+\begin{align}
+\text{Potential Outcomes} &\qquad \text{Cost} \\
+Y_1 = \mu_1(X) + U_1      &\qquad C = \mu_D(Z) \\
+Y_0 = \mu_0(X) + U_0      &\qquad \\
+    & \\
+\text{Observed Outcomes } &\qquad \text{Choice} \\
+Y = D Y_1 + (1 - D)Y_0 &\qquad S = Y_1 - Y_0 - C \\
+                       &\qquad D = \mathrm{I}[S < 0] \\
+\end{align}
+
+\end{frame}
+
+
+
+%!TEX root = ../main.tex
+\beginbackup\appendix
+\begin{frame}\begin{center}
+\LARGE\textbf{Appendix}
+\end{center}\end{frame}
+
+%------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+\begin{frame}\begin{center}
+\LARGE\textit{References}
+\end{center}\end{frame}
+%------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+\newgeometry{margin=1cm}
+\begin{frame}[allowframebreaks]\frametitle{}
+
+\nocite{Carneiro.2011}
+
+\bibliographystyle{apalike}
+\bibliography{../../../submodules/bibliography/literature}
+
+
+\end{frame}
+
+\backupend
+\end{document}
