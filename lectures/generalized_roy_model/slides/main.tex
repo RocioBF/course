@@ -1,8 +1,8 @@
 \input{header}
 
 %!TEX root = ../main.tex
-\title{Estimating Marginal Returns to Education}
-\author{Pedro Carneiro, James J. Heckman, and Edward J. Vytlacil}
+\title{Generalized Roy Model}
+\author{Philipp Eisenhauer}
 
 \date{}
 
@@ -13,15 +13,86 @@
 \maketitle
 
 \begin{frame}
-\textbf{Questions}
+
 
 \begin{itemize}
-\item Does the pursuit of compareative advantage increase or decrease earnings in equality within sectors and in the overall economy?
+\item Does the pursuit of comparative advantage increase or decrease earnings in equality within sectors and in the overall economy?
 \item Do the people with the highest $i$ skill actually work in sector $i$?
 \item As people enter a sector in response to an increase in the demand for its services, does the average skill level employed there rise or fall?
 \end{itemize}
 
 \end{frame}
+
+
+\begin{frame}
+\textbf{\citet{Roy.1951} Model}
+\begin{itemize}
+\item Individuals are income maximizing, act under perfect information, and possess skills $S_1$ and $S_2$.
+\item The economy offers two employment opportunities associated with skill prices $\pi_1$ and $\pi_2$ and skill $i$ is only useful in sector $i$.
+\end{itemize}\vspace{0.5cm}
+
+An individual chooses sector one if earnings are greater there:
+\begin{align*}
+w_1 > w_2 \quad\Longleftrightarrow\quad \pi_1 S_1 > \pi_2 S_2
+\end{align*}
+\end{frame}
+
+
+\begin{frame}
+\textbf{Econometric Problems}
+
+\begin{itemize}
+\item \textbf{Evaluation Problem} We only observe an individual's wage in the sector they are working in.
+\item \textbf{Selection Problem} As individuals pursue their comparative advantage, we only observe selected samples from the latent skill distribution in either sector.
+\end{itemize}\vspace{0.5cm}
+
+
+\end{frame}
+
+
+
+\begin{frame}
+\textbf{Key Questions}\\
+\begin{itemize}\setlength\itemsep{1em}
+\item What economic concepts are accounted for, which are not?
+\item What does the individual, what does the econometrician know?
+\item What gives rise to heterogeneity in skills?
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\begin{itemize}
+\item Skills follow a bivariate normal distribution denoted by $F(s_1, s_2)$.
+\end{itemize}
+
+\begin{align*}
+\begin{pmatrix}
+ \ln S_1 \\
+ \ln S_2
+\end{pmatrix}  \sim \mathcal{N} \left( \begin{pmatrix}
+ \mu_1 \\
+ \mu_2
+\end{pmatrix} , \begin{pmatrix}
+ \sigma^2_1  &  \sigma_{12} \\
+ \sigma_{21}&  \sigma^2_2
+\end{pmatrix} \right)
+\end{align*}
+
+\end{frame}
+
+\begin{frame}
+\begin{figure}[htp]\centering
+\caption{Joint Distribution of Skills}\label{Joint Distribution of Skills}\scalebox{0.35}{\includegraphics{fig-distribution-skills-latent-joint}}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\begin{figure}[htp]\centering
+\caption{Marginal Distribution of Skill}\label{Marginal Distribution of Skill}\scalebox{0.35}{\includegraphics{fig-distribution-skills-latent-marginal}}
+\end{figure}
+\end{frame}
+
 
  \begin{frame}
  The proportion of the population working in sector one $P_1$
@@ -41,64 +112,169 @@
  \end{frame}
 
 
+
+\begin{frame}
+\begin{figure}[htp]\centering
+\caption{Latent and Observed Distribution of Skill}\label{Latent and Observed Distribution of Skill}\scalebox{0.35}{\includegraphics{fig-distribution-skills-both-marginal}}
+\end{figure}
+\end{frame}
+
+
 \begin{frame}
 
 \textbf{Wage Equations}
 
 \begin{align*}
-\log W_1 & = \log \pi_1 + \mu_1 + U_1 \\
-\log W_2 & = \log \pi_2 + \mu_2 + U_2, \\
+\ln W_1 & = \ln \pi_1 + \mu_1 + U_1 \\
+\ln W_2 & = \ln \pi_2 + \mu_2 + U_2, \\
 \end{align*}
-where $U_i = \log S_i - \mu_i$.
+where $U_i = \ln S_i - \mu_i$.
 
 \end{frame}
 
 
 \begin{frame}
+
+\textbf{Sorting}
+
+\begin{align*}
+E[\ln S_1 \mid \ln W_1 > \ln W_2] & = \mu_1 + \frac{\sigma_{11} - \sigma_{12}}{\sigma^*} \lambda(-c_1) \\
+E[\ln S_2 \mid \ln W_2 > \ln W_1] & = \mu_2 + \frac{\sigma_{22} - \sigma_{12}}{\sigma^*} \lambda(-c_2)
+\end{align*}
+
+We know the following:
+
+\begin{align*}
+\sigma^2 = (\sigma_{11} - \sigma_{12}) -  (\sigma_{22} - \sigma_{12}) > 0
+\end{align*}
+
+\begin{itemize}
+\item There must be positive selection into one of the occupations and there can be positive selection into both.
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+\begin{figure}[htp]\centering
+\caption{Marginal Distributions of Skills}\label{Marginal Distributions of Skills}\scalebox{0.35}{\includegraphics{fig-distribution-skills-latent-marginal-two.png}}
+\end{figure}
+\end{frame}
+
+
+
+\begin{frame}
+\textbf{What do we know?}
+\begin{itemize}\setlength\itemsep{1em}
+\item There is positive selection in Sector 2, because there cannot be negative selection in both and $\sigma_{22} > \sigma_{11}$.
+\end{itemize}\vspace{0.5cm}
+
+\textbf{How about Sector 1?}
+\begin{itemize}\setlength\itemsep{1em}
+\item If $\sigma_{12} < 0$, then there is also positive selection in Sector 1.
+\item If $\rho_{12} = 1$, then there is negative selection into Sector 1 as $\sigma_{12} > \sigma_{11}$
+\end{itemize}
+
+\end{frame}
+
+
+
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+\begin{frame}\begin{center}
+\LARGE\textit{Importance of Assignment Mechanism}
+\end{center}\end{frame}
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+
+\begin{frame}
+
+\citet{Heckman.1990} show that ... \vspace{0.5cm}
+
+\begin{quote} For a log normal Roy economy, any random assignment of persons to sectors with the same proportion of persons in each sector as in the Roy economy has higher variance of log earnings provided the proportions lie strictly in the unit interval. This is true whether or not skill prices in the two economies are the same.
+\end{quote}
+\end{frame}
+
+\begin{frame}
+\begin{center} \textbf{Choices over Time}\\\vspace{0.5cm}
+\scalebox{0.6}{\includegraphics{fig-assignment-mechanism.png}}
+\end{center}
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+\begin{frame}\begin{center}
+\LARGE\textit{Incarnations of the Roy Model}
+\end{center}\end{frame}
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+\begin{frame}
 \textbf{The Generalized Roy Model}
 
-\begin{align}
+\begin{align*}
 \text{Potential Outcomes} &\qquad \text{Cost} \\
 Y_1 = \mu_1(X) + U_1      &\qquad C = \mu_D(Z) + U_C \\
 Y_0 = \mu_0(X) + U_0      &\qquad \\
     & \\
 \text{Observed Outcomes } &\qquad \text{Choice} \\
 Y = D Y_1 + (1 - D)Y_0 &\qquad S = Y_1 - Y_0 - C \\
-                       &\qquad D = \mathrm{I}[S < 0] \\
-\end{align}
+                       &\qquad D = \mathrm{I}[S > 0] \\
+\end{align*}
 \end{frame}
 
-
 \begin{frame}
-\textbf{Mapping Notation to original Roy Model}
-
-\begin{align}
-\text{Potential Outcomes} &\qquad \text{Cost} \\
-W_1 = \pi S_1      &\qquad C = 0 \\
-W_2 = \pi s_1       &\qquad \\
-    & \\
-\text{Observed Outcomes } &\qquad \text{Choice} \\
-W = D W_1 + (1 - D)W_2 &\qquad S = W_1 - W_2 \\
-                       &\qquad D = \mathrm{I}[S < 0] \\
-\end{align}
+\begin{figure}[htp]\centering
+\caption{Occupational Sorting in the Generalized Roy Model}\label{Occupational Sorting in the Generalized Roy Model}\scalebox{0.35}{\includegraphics{fig-occupational-choices-generalized.png}}
+\end{figure}
 \end{frame}
 
 
 \begin{frame}
 \textbf{Extended Roy Model}
 
-\begin{align}
+\begin{align*}
 \text{Potential Outcomes} &\qquad \text{Cost} \\
 Y_1 = \mu_1(X) + U_1      &\qquad C = \mu_D(Z) \\
 Y_0 = \mu_0(X) + U_0      &\qquad \\
     & \\
 \text{Observed Outcomes } &\qquad \text{Choice} \\
 Y = D Y_1 + (1 - D)Y_0 &\qquad S = Y_1 - Y_0 - C \\
-                       &\qquad D = \mathrm{I}[S < 0] \\
-\end{align}
+                       &\qquad D = \mathrm{I}[S > 0] \\
+\end{align*}
 
 \end{frame}
 
+
+
+
+\begin{frame}
+\begin{figure}[htp]\centering
+\caption{Occupational Sorting in the Extended Roy Model}\label{Occupational Sorting in the Extended Roy Model}\scalebox{0.35}{\includegraphics{fig-occupational-choices-extended.png}}
+\end{figure}
+\end{frame}
+
+
+
+
+\begin{frame}
+\textbf{Mapping Notation to original Roy Model}
+
+\begin{align*}
+\text{Potential Outcomes} &\qquad \text{Cost} \\
+W_1 = \pi_1 S_1      &\qquad C = 0 \\
+W_2 = \pi_2 S_2       &\qquad \\
+    & \\
+\text{Observed Outcomes } &\qquad \text{Choice} \\
+W = D W_1 + (1 - D)W_2 &\qquad S = W_1 - W_2 \\
+                       &\qquad D = \mathrm{I}[S > 0] \\
+\end{align*}
+\end{frame}
+
+\begin{frame}
+\begin{figure}[htp]\centering
+\caption{Occupational Sorting in the Original Roy Model}\label{Occupational Sorting in the Original Roy Model}\scalebox{0.35}{\includegraphics{fig-occupational-choices-original.png}}
+\end{figure}
+\end{frame}
 
 
 %!TEX root = ../main.tex
