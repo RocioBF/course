@@ -11,3 +11,8 @@ if __name__ == '__main__':
         subprocess.check_call('./create', shell=True)
         shutil.copy('main.pdf', '../' + dirname + '.pdf')
         os.chdir('../')
+
+    # W simply attach the movie for now.
+    cmd = 'pdftk slides.pdf material/movie.pdf cat output slides_update.pdf'
+    os.system(cmd)
+    shutil.move('slides_update.pdf', 'slides.pdf')
