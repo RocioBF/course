@@ -74,8 +74,8 @@ w_1 > w_2 \quad\Longleftrightarrow\quad \pi_1 S_1 > \pi_2 S_2
  \mu_1 \\
  \mu_2
 \end{pmatrix} , \begin{pmatrix}
- \sigma^2_1  &  \sigma_{12} \\
- \sigma_{21}&  \sigma^2_2
+ \sigma_{11}  &  \sigma_{12} \\
+ \sigma_{21}&  \sigma_{22}
 \end{pmatrix} \right)
 \end{align*}
 
@@ -104,11 +104,11 @@ w_1 > w_2 \quad\Longleftrightarrow\quad \pi_1 S_1 > \pi_2 S_2
 
  \begin{align*}
  f(s_1) & = \int^\infty_0 f(s_1, s_2) ds_2 \\
- g_1(s_1 \mid \pi_1 S_1 > \pi_2 S_2) & = \frac{1}{P} \int^{\pi_1 s_1 /\pi_2}_0 f(s_1, s_2) ds_2
+ g_1(s_1 \mid \pi_1 S_1 > \pi_2 S_2) & = \frac{1}{P_1} \int^{\pi_1 s_1 /\pi_2}_0 f(s_1, s_2) ds_2
  \end{align*}
 
 
- The distribution of skills employed in sector $i$ differs from the population distribution of skills due to comparative advantage.
+ The distribution of skills employed in sector 1 differs from the population distribution of skills due to comparative advantage.
  \end{frame}
 
 
@@ -143,9 +143,9 @@ E[\ln S_2 \mid \ln W_2 > \ln W_1] & = \mu_2 + \frac{\sigma_{22} - \sigma_{12}}{\
 \end{align*}
 
 We know the following:
-
 \begin{align*}
-\sigma^2 = (\sigma_{11} - \sigma_{12}) -  (\sigma_{22} - \sigma_{12}) > 0
+\sigma^* & = (\sigma_{11} - \sigma_{12}) +  (\sigma_{22} - \sigma_{12}) > 0 \\
+\lambda &> 0
 \end{align*}
 
 \begin{itemize}
@@ -176,6 +176,27 @@ We know the following:
 \end{itemize}
 
 \end{frame}
+
+
+\begin{frame}
+
+We gain further insights into the effect of self-selection on the distribution of earnings for workers in sector 1 by looking at the  distribution of $\ln S_1$  conditional on $\ln S_2$.
+
+\begin{align*}
+\ln S_1 \mid \ln S_2 \sim \N (\mu, \sigma),
+\end{align*}
+
+where
+\begin{align*}
+\mu = \mu_1 + \frac{\sigma_{12}}{\sigma_{22}} \Bigg(\ln S_2 - \mu_2\Bigg) \quad\text{and}\quad
+\sigma = \sigma_{11} \left(1 - \left(\frac{\sigma_{12}}{\sigma_1 \sigma_2}\right)^2\right)
+\end{align*}
+
+\end{frame}
+
+\begin{frame}\begin{center}
+\LARGE\textbf{Heckman Productions}
+\end{center}\end{frame}
 
 
 
@@ -275,7 +296,6 @@ W = D W_1 + (1 - D)W_2 &\qquad S = W_1 - W_2 \\
 \caption{Occupational Sorting in the Original Roy Model}\label{Occupational Sorting in the Original Roy Model}\scalebox{0.35}{\includegraphics{fig-occupational-choices-original.png}}
 \end{figure}
 \end{frame}
-
 
 %!TEX root = ../main.tex
 \beginbackup\appendix
