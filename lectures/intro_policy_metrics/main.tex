@@ -1,10 +1,13 @@
 \input{header.tex}
 
 %!TEX root = ../main.tex
-\title{Generalized Roy Model}
-\author{Philipp Eisenhauer}
+\title{Introduction to the Econometrics of Policy Evaluation}
+\author{\textbf{Philipp Eisenhauer}}
+\date{\parbox{\linewidth}{\centering%
+  \ldots{} background material available at \endgraf
+ {\urlstyle{same}\url{{https://github.com/policyMetrics/course}}}}}
 
-\date{}
+
 
 \let\otp\titlepage
 %\renewcommand{\titlepage}{\otp\addtocounter{framenumber}{-1}}
@@ -13,18 +16,19 @@
 \maketitle
 
     
-\begin{frame}
-
-{Introduction to the Econometrics of Policy Evaluation}\label{introduction-to-the-econometrics-of-policy-evaluation}
- \ldots{} background material available at
-https://github.com/policyMetrics/course 
-\subsubsection{Policy Evaluation Tasks}\label{policy-evaluation-tasks}
-
-\end{frame}
+%\begin{frame}
+%
+%{Introduction to the Econometrics of Policy Evaluation}\label{introduction-to-the-econometrics-of-policy-evaluation}
+% \ldots{} background material available at
+%https://github.com/policyMetrics/course 
+%\subsubsection{Policy Evaluation Tasks}\label{policy-evaluation-tasks}
+%
+%\end{frame}
 
 \begin{frame}
 \frametitle{Policy Evaluation Tasks}
-Heckman (2008) defines three policy evaluation tasks:
+\textbf{Heckman (2008) defines three policy evaluation tasks:}
+
 \begin{itemize}
 \item
   Evaluating the impact of historical interventions on outcomes
@@ -41,10 +45,12 @@ Heckman (2008) defines three policy evaluation tasks:
 \end{itemize}
 
 \end{frame}
+
     
 \begin{frame}
 \frametitle{Policy Evaluation Tasks}
  The Econometrics of Policy Evaluation
+
 \begin{itemize}
 \item
  \ldots{} is important
@@ -53,9 +59,10 @@ Heckman (2008) defines three policy evaluation tasks:
 \item
   \ldots{} is multifaceted
 \end{itemize}
+
 \end{frame}  
 
-%    \subsubsection{Numerous Applications}\label{numerous-applications}
+%\subsubsection{Numerous Applications}\label{numerous-applications}
 
 \begin{frame}
 \frametitle{Numerous Applications}
@@ -69,14 +76,15 @@ Heckman (2008) defines three policy evaluation tasks:
 \item
   Health Economics
 \end{itemize} 
+
 \end{frame}
     
-
 
     %\subsubsection{Numerous Effects}\label{numerous-effects}
     
 \begin{frame}
 \frametitle{Numerous Effects}
+
 \begin{itemize}
 \item
   (Local) Average Effects
@@ -87,14 +95,14 @@ Heckman (2008) defines three policy evaluation tasks:
 \item
   Effects on Distributions
 \end{itemize}
+
 \end{frame}
 
-
-
-
    % \subsubsection{Numerous Methods}\label{numerous-methods}
+   
 \begin{frame}
 \frametitle{Numerous Methods}
+
 \begin{itemize}
 \item
   Instrumental Variables
@@ -103,42 +111,47 @@ Heckman (2008) defines three policy evaluation tasks:
 \item
   Matching
 \end{itemize}  
+
 \end{frame}
 
 
-
 %    \subsection{Unifying Framework}\label{unifying-framework}
-%
+
 \begin{frame}
 \frametitle{Unifying Framework}
+
 \textbf{Generalized Roy Model}
 \begin{align*}
-\text{Potential Outcomes} &\qquad \text{Cost} \\
+\textbf{Potential Outcomes} &\qquad \textbf{Cost} \\
 Y_1 = \mu_1(X) + U_1      &\qquad C = \mu_D(Z) + U_C \\
 Y_0 = \mu_0(X) + U_0      &\qquad \\
     & \\
-\text{Observed Outcomes} &\qquad \text{Choice} \\
+\textbf{Observed Outcomes} &\qquad \textbf{Choice} \\
 Y = D Y_1 + (1 - D)Y_0 &\qquad S = Y_1 - Y_0 - C \\
                        &\qquad D = \mathrm{I}[S > 0] \\
 \end{align*}
 
 \end{frame}
 
+
 \begin{frame}
-\frametitle{Unifying Framework}
+%\frametitle{Unifying Framework}
 \begin{figure}[htp]\centering
-\caption{Treatment Effects Conventional}\label{Treatment Effects Conventional}\scalebox{0.35}{\includegraphics{./material/fig-treatment-effects-conventional.png}}
+\caption{Treatment Effects with Essential Heterogeneity}\label{Treatment Effects Conventional}\scalebox{0.35}{\includegraphics{./material/fig-treatment-effects-conventional.png}}
 \end{figure}
+
 \end{frame}
 
 
 \begin{frame}
 \frametitle{Teaching Tool}
+
 \begin{figure}[htp]\centering
-\includegraphics[width=\textwidth]{./material/fig-online-documentation.png}
+	\includegraphics[width=\textwidth]{./material/fig-online-documentation.png}
 %\caption{Teaching Tool}\label{Teaching Tool}
 %\scalebox{0.18}{\includegraphics{./material/fig-online-documentation.png}}
 \end{figure}
+
 \end{frame}
     
 
@@ -164,7 +177,6 @@ Date & Topic\tabularnewline
 \end{frame}
 
 
-
  %   \subsubsection{The Mirless Review}\label{the-mirless-review}
     
 \begin{frame}
@@ -180,33 +192,30 @@ that direction.
 \end{quote}
 \end{frame}
 
+
 \begin{frame}
 \frametitle{Distributional Effects of Treatment}
-\begin{figure}
+
+\begin{figure}[htp]
+\vspace*{-0.5cm}
 \centering
-\begin{minipage}{0.4\textwidth}
+\begin{minipage}[t]{0.4\textwidth}
   \centering
   \caption{The Mirless Review 1}\label{The Mirless Review 1}
   \includegraphics[width=\linewidth]{./material/fig-mirrlees-review-1.png}
 \end{minipage}% 
 \hfill
-\begin{minipage}{0.4\textwidth}
+\begin{minipage}[t]{0.4\textwidth}
   \centering
    \caption{The Mirless Review 2}\label{The Mirless Review 2}
    \includegraphics[width=\linewidth]{./material/fig-mirrlees-review-2.png}
 \end{minipage}
 \end{figure}
 \end{frame}
-
-  
-
-    
-
-    
+   
 
    % \subsubsection{Key Findings}\label{key-findings}
-   
-      
+        
 \begin{frame}
 \frametitle{Key Findings}
 
@@ -271,67 +280,16 @@ that direction.
 \end{frame}
 
 
-%\begin{frame}
-%\frametitle{References} 
-%%\textbf{References}     
-%
-%\begin{itemize}
-%\item
-%  Heckman, J. J., Moon, S. H., Pinto, R., Savelyev, P. A. and Yavitz A.
-%  (2010).
-%  \href{http://www.sciencedirect.com/science/article/pii/S0047272709001418}{The
-%  rate of return to the HighScope Perry Preschool Program.}
-%  \emph{Journal of Public Economics}, 94(1), 114-128
-%\item
-%  Todd, P. E. and Wolpin, K. I. (2006)
-%  \href{https://www.aeaweb.org/articles?id=10.1257/aer.96.5.1384}{Assessing
-%  the Impact of a School Subsidy Program in Mexico: Using a Social
-%  Experiment to Validate a Dynamic Behavioral Model of Child Schooling
-%  and Fertility.} \emph{American Economic Review}, 96(5), 1384-1417
-%\item
-%  Cho, S. and Rust, J. (2010)
-%  \href{https://www.jstor.org/stable/40587639}{The Flat Rental Puzzle.}
-%  \emph{The Review of Economic Studies}, 77(2), 560-594
-%\end{itemize}
-%\end{frame}
-%
-%\begin{frame}
-%    \begin{itemize}
-%\item
-%  Finkelstein, A., Taubman, S., Wright, B., Bernstein, M., Gruber, J.,
-%  Newhouse, J. P., Allen, H., Baicker, K., Oregon Health Study Group
-%  (2012).
-%  \href{https://academic.oup.com/qje/article-lookup/doi/10.1093/qje/qjs020}{The
-%  Oregon Health Insurance Experiment: Evidence from the First Year.}
-%  \emph{The Quarterly Journal of Economics}, 127(3), 1057-1106
-%\item
-%  Gordon, R. (2011).
-%  \href{http://onlinelibrary.wiley.com/doi/10.1111/j.1475-5890.2011.00143.x/abstract}{Commentary
-%  on Tax by Design: The Mirrlees Review.} \emph{Fiscal Studies}, 32(3),
-%  395-414
-%\item
-%  Adam, S., Besley, T., Blundell, R., Bond, S. and Chote, R., Gammie, M.
-%  and Johnson, P., Myles, G. and Poterba, J. M. (2010).
-%  \href{https://www.ifs.org.uk/publications/7184}{Dimensions of Tax
-%  Design: The Mirrlees Review.} Institute for Fiscal Studies (ifs),
-%  editor, Oxford University Press
-%\item
-%  Mirrlees, J., Adam, S., Besley, T., Blundell, R., Bond, S., Chote, R.,
-%  Gammie, M., Johnson, P., Myles, G. and Poterba, J. M. (2011)
-%  \href{https://www.ifs.org.uk/publications/5353}{Tax by design.}
-%  Institute for Fiscal Studies (IFS) and Mirrlees, J., editors, Oxford
-%  University Press
-%\end{itemize}
-%\end{frame}
 
     % Add a bibliography block to the postdoc
     
 
 %!TEX root = ../main.tex
-\beginbackup\appendix
-\begin{frame}\begin{center}
-\LARGE\textbf{Appendix}
-\end{center}\end{frame}
+\beginbackup
+%\appendix
+%\begin{frame}\begin{center}
+%\LARGE\textbf{Appendix}
+%\end{center}\end{frame}
 
 %------------------------------------------------------------------------------
 %------------------------------------------------------------------------------
@@ -343,10 +301,11 @@ that direction.
 \newgeometry{margin=1cm}
 \begin{frame}[allowframebreaks]\frametitle{}
 
-\nocite{Carneiro.2011, Heckman.1990c, Heckman.2010h}
+\nocite{Heckman.2009e,Todd.2006,Cho.2010,Gordon.2011,Finkelstein.2012, Adam.2010,Mirrlees.2011}
 
 \bibliographystyle{apalike}
-\bibliography{../../../submodules/bibliography/literature}
+\bibliography{../../submodules/bibliography/literature}
+%\bibliography{../../../submodules/bibliography/literature}
 
 \end{frame}
 
