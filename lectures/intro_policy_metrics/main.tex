@@ -1,0 +1,313 @@
+\input{header.tex}
+
+%!TEX root = ../main.tex
+\title{Introduction to the Econometrics of Policy Evaluation}
+\author{\textbf{Philipp Eisenhauer}}
+\date{\parbox{\linewidth}{\centering%
+  \ldots{} background material available at \endgraf
+ {\urlstyle{same}\url{{https://github.com/policyMetrics/course}}}}}
+
+
+
+\let\otp\titlepage
+%\renewcommand{\titlepage}{\otp\addtocounter{framenumber}{-1}}
+
+\begin{document}
+\maketitle
+
+    
+%\begin{frame}
+%
+%{Introduction to the Econometrics of Policy Evaluation}\label{introduction-to-the-econometrics-of-policy-evaluation}
+% \ldots{} background material available at
+%https://github.com/policyMetrics/course 
+%\subsubsection{Policy Evaluation Tasks}\label{policy-evaluation-tasks}
+%
+%\end{frame}
+
+\begin{frame}
+\frametitle{Policy Evaluation Tasks}
+\textbf{Heckman (2008) defines three policy evaluation tasks:}
+
+\begin{itemize}
+\item
+  Evaluating the impact of historical interventions on outcomes
+  including their impact in terms of well-being of the treated and the
+  society at large.
+\item
+  Forecasting the impact of historical interventions implemented in one
+  environment in other environments, including their impact in terms of
+  well-being.
+\item
+  Forecasting the impacts of interventions never historically
+  experienced to various environments, including their impact on
+  well-being.
+\end{itemize}
+
+\end{frame}
+
+    
+\begin{frame}
+\frametitle{Policy Evaluation Tasks}
+ The Econometrics of Policy Evaluation
+
+\begin{itemize}
+\item
+ \ldots{} is important
+\item
+  \ldots{} is complicated
+\item
+  \ldots{} is multifaceted
+\end{itemize}
+
+\end{frame}  
+
+%\subsubsection{Numerous Applications}\label{numerous-applications}
+
+\begin{frame}
+\frametitle{Numerous Applications}
+\begin{itemize}
+\item
+  Labor Economics
+\item
+  Development Economics
+\item
+  Industrial Economics
+\item
+  Health Economics
+\end{itemize} 
+
+\end{frame}
+    
+
+    %\subsubsection{Numerous Effects}\label{numerous-effects}
+    
+\begin{frame}
+\frametitle{Numerous Effects}
+
+\begin{itemize}
+\item
+  (Local) Average Effects
+\item
+  Marginal Effects
+\item
+  Distributional Effects
+\item
+  Effects on Distributions
+\end{itemize}
+
+\end{frame}
+
+   % \subsubsection{Numerous Methods}\label{numerous-methods}
+   
+\begin{frame}
+\frametitle{Numerous Methods}
+
+\begin{itemize}
+\item
+  Instrumental Variables
+\item
+  Experimental Methods
+\item
+  Matching
+\end{itemize}  
+
+\end{frame}
+
+
+%    \subsection{Unifying Framework}\label{unifying-framework}
+
+\begin{frame}
+\frametitle{Unifying Framework}
+
+\textbf{Generalized Roy Model}
+\begin{align*}
+\textbf{Potential Outcomes} &\qquad \textbf{Cost} \\
+Y_1 = \mu_1(X) + U_1      &\qquad C = \mu_D(Z) + U_C \\
+Y_0 = \mu_0(X) + U_0      &\qquad \\
+    & \\
+\textbf{Observed Outcomes} &\qquad \textbf{Choice} \\
+Y = D Y_1 + (1 - D)Y_0 &\qquad S = Y_1 - Y_0 - C \\
+                       &\qquad D = \mathrm{I}[S > 0] \\
+\end{align*}
+
+\end{frame}
+
+
+\begin{frame}
+%\frametitle{Unifying Framework}
+\begin{figure}[htp]\centering
+\caption{Treatment Effects with Essential Heterogeneity}\label{Treatment Effects Conventional}\scalebox{0.35}{\includegraphics{./material/fig-treatment-effects-conventional.png}}
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Teaching Tool}
+
+\begin{figure}[htp]\centering
+	\includegraphics[width=\textwidth]{./material/fig-online-documentation.png}
+%\caption{Teaching Tool}\label{Teaching Tool}
+%\scalebox{0.18}{\includegraphics{./material/fig-online-documentation.png}}
+\end{figure}
+
+\end{frame}
+    
+
+    %\subsection{Lecture Plan}\label{lecture-plan}
+
+\begin{frame}
+\frametitle{Lecture Plan}
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Date & Topic\tabularnewline
+\midrule
+\endhead
+19/10/17 & Generalized Roy Model\tabularnewline
+26/10/17 & Parameters of Interest\tabularnewline
+02/11/17 & Estimation Methods\tabularnewline
+09/11/17 & \emph{grmpy} Tutorial\tabularnewline
+16/11/17 & Monte-Carlo Explorations\tabularnewline
+23/11/17 &\tabularnewline
+30/11/17 &\tabularnewline
+\bottomrule
+\end{longtable}
+    
+\end{frame}
+
+
+ %   \subsubsection{The Mirless Review}\label{the-mirless-review}
+    
+\begin{frame}
+\frametitle{The Mirless Review}
+
+\begin{quote}
+The Mirrlees Review brought together a high-profile group of
+international experts and early career researchers to identify the
+characteristics of a good tax system for any open developed economy in
+the 21st century, assess the extent to which the UK tax system conforms
+to these ideals, and recommend how it might realistically be reformed in
+that direction.
+\end{quote}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Distributional Effects of Treatment}
+
+\begin{figure}[htp]
+\vspace*{-0.5cm}
+\centering
+\begin{minipage}[t]{0.4\textwidth}
+  \centering
+  \caption{The Mirless Review 1}\label{The Mirless Review 1}
+  \includegraphics[width=\linewidth]{./material/fig-mirrlees-review-1.png}
+\end{minipage}% 
+\hfill
+\begin{minipage}[t]{0.4\textwidth}
+  \centering
+   \caption{The Mirless Review 2}\label{The Mirless Review 2}
+   \includegraphics[width=\linewidth]{./material/fig-mirrlees-review-2.png}
+\end{minipage}
+\end{figure}
+\end{frame}
+   
+
+   % \subsubsection{Key Findings}\label{key-findings}
+        
+\begin{frame}
+\frametitle{Key Findings}
+
+\begin{itemize}
+%\tightlist
+\item
+  \textbf{Taxation of Earnings}
+
+  \begin{itemize}
+ % \tightlist
+  \item
+    A single integrated benefit should be introduced to replace all or
+    most of the current multiplicity of benefits, rationalising the way
+    in which total support varies with income and other characteristics.
+  \end{itemize}
+\item
+  \textbf{Indirect Taxes}
+  \begin{itemize}
+ % \tightlist
+  \item
+    VAT should be extended to nearly all spending. This would reduce
+    complexity and avoid costly distortions to consumption choices.
+  \end{itemize}
+\end{itemize}
+    
+\end{frame}
+
+    
+\begin{frame}
+\frametitle{Key Findings}
+
+\begin{itemize}
+%\tightlist
+\item
+  \textbf{Environmental Taxes}
+
+  \begin{itemize}
+ % \tightlist
+  \item
+    We should work towards a comprehensive system of congestion charging
+    on the roads, replacing most of fuel duty.
+  \end{itemize}
+\item
+  \textbf{Taxes on Saving}
+
+  \begin{itemize}
+ % \tightlist
+  \item
+    The risk-free return to saving should not be taxed, so that saving
+    is not discouraged.
+  \end{itemize}
+\item
+  \textbf{Business Taxes}
+  \begin{itemize}
+%  \tightlist
+  \item
+    The tax treatment of employment, self-employment and corporatesource
+    income should be aligned.
+  \end{itemize}
+\end{itemize}
+    
+\end{frame}
+
+
+
+    % Add a bibliography block to the postdoc
+    
+
+%!TEX root = ../main.tex
+\beginbackup
+%\appendix
+%\begin{frame}\begin{center}
+%\LARGE\textbf{Appendix}
+%\end{center}\end{frame}
+
+%------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+\begin{frame}\begin{center}
+\LARGE\textit{References}
+\end{center}\end{frame}
+%------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+\newgeometry{margin=1cm}
+\begin{frame}[allowframebreaks]\frametitle{}
+
+\nocite{Heckman.2009e,Todd.2006,Cho.2010,Gordon.2011,Finkelstein.2012, Adam.2010,Mirrlees.2011}
+
+\bibliographystyle{apalike}
+\bibliography{../../submodules/bibliography/literature}
+%\bibliography{../../../submodules/bibliography/literature}
+
+\end{frame}
+
+\backupend
+\end{document}
