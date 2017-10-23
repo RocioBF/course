@@ -26,13 +26,51 @@ Since nearly all of you choose to review experimental studies. Please be sure to
 \end{frame}
 
 \begin{frame}
-\textbf{Presentation Schedule}
+\textbf{Student Presentation}
 
 \begin{itemize}
 \item 20 minutes of presentation and discussion
 \item peer-review of presentation
 \end{itemize}
 \end{frame}
+
+
+
+
+\begin{frame}
+\textbf{The Generalized Roy Model}
+
+\begin{align*}
+\text{Potential Outcomes} &\qquad\text{Observed Outcomes }\\
+Y_1 = \mu_1(X) + U_1      &\qquad  Y = D Y_1 + (1 - D)Y_0 \\
+Y_0 = \mu_0(X) + U_0      &\qquad \\
+    & \\
+\text{Choice} & \\
+D = \mathrm{I}[\mu_D(X, Z) + V] & \\
+\end{align*}
+\end{frame}
+
+
+\begin{frame}
+\textbf{Specification}
+
+We follow the parameterization in \citet{Heckman.2005e}:
+
+\begin{align*}
+Y_1 = \gamma + \alpha + U_1  \\
+Y_0 = \gamma + U_0     \\
+D = \mathrm{I}[Z - V > 0]
+\end{align*}
+\end{frame}
+
+
+
+
+
+
+
+
+
 
 \begin{frame}
 \begin{figure}\caption{Conditional Expectation and Essential Heterogeneity}
